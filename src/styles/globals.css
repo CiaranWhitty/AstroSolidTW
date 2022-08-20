@@ -1,4 +1,28 @@
-/* The integration's default injected base.css file */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Proxima Nova, system-ui, sans-serif;
+  }
+}
+
+body {
+  @apply m-0;
+  @apply bg-gray-100;
+  z-index: 99999;
+}
+
+hr {
+  width: -webkit-fill-available;
+  max-width: 90vw;
+  margin: 5px auto;
+  border-style: solid;
+  @apply max-w-4xl;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
