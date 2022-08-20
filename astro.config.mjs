@@ -8,5 +8,5 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [solid(), tailwind()],
   output: "server",
-  adapter: node(),
+  adapter: netlify(),
 });
