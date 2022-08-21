@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-const imageUrl = "https://placeimg.com/400/225/arch";
 
 import MainLayout from "../../layouts/MainLayout.astro";
 import NavLayout from "../../layouts/NavLayout.astro";
@@ -18,7 +17,7 @@ const product = ProductData.find((p) => p.url_name === Astro.params.url_name);
       <div class="max-w-md">
         <Image
           class="w-full"
-          src={imageUrl}
+          src={"https://placeimg.com/400/225/arch"}
           alt={product?.name}
           height={200}
           aspectRatio="16:9"
