@@ -1,6 +1,4 @@
 ---
-import { Image } from "@astrojs/image/components";
-
 import MainLayout from "../layouts/MainLayout.astro";
 import NavLayout from "../layouts/NavLayout.astro";
 
@@ -15,12 +13,7 @@ import { ProductData } from "../data/products";
           return (
             <div class="card m-5 w-96 rounded bg-base-100 p-5 shadow-xl duration-500  motion-safe:hover:scale-105">
               <a href={`/products/${product.url_name}`} class="text-center">
-                <Image
-                  src={product.image.src}
-                  alt={product?.name}
-                  height={200}
-                  aspectRatio="16:9"
-                />
+                <img src={product.image.src} alt={product?.name} height={200} />
               </a>
               <div class="card-body">
                 <a

@@ -4,11 +4,9 @@ import tailwind from "@astrojs/tailwind";
 import netlify from "@astrojs/netlify/functions";
 import node from "@astrojs/node";
 
-import image from "@astrojs/image";
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solid(), tailwind(), image()],
+  integrations: [solid(), tailwind()],
   output: "server",
   adapter: netlify(),
 });
