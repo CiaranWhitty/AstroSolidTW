@@ -28,7 +28,9 @@ const page = Astro.props.page;
         <div class="w-8/12 lg:flex lg:justify-between m-auto">
           <!-- Navbar menu content here -->
           <div class="flex-1">
-            <a class="btn btn-ghost normal-case text-base sm:text-xl p-0"
+            <a
+              href="/"
+              class="btn btn-ghost normal-case text-base sm:text-xl p-0"
               >1234567891
             </a>
           </div>
@@ -68,7 +70,10 @@ const page = Astro.props.page;
             <div class="dropdown dropdown-end">
               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
+                  <img
+                    src="https://placeimg.com/80/80/people"
+                    alt="ProfilePicture"
+                  />
                 </div>
               </label>
               <ul
@@ -76,13 +81,13 @@ const page = Astro.props.page;
                 class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40"
               >
                 <li>
-                  <a class="justify-between">
+                  <a href="/profile" class="justify-between">
                     Profile
                     <!-- <span class="badge">New</span> -->
                   </a>
                 </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -99,7 +104,9 @@ const page = Astro.props.page;
     <ul
       class="menu menu-vertical m-0 p-4 overflow-y-auto w-10/12 max-w-xs bg-base-100"
     >
-      <h3 class="px-2 mx-2">Navigation - {page}</h3>
+      <li>
+        <h3 class="px-2 mx-2">Navigation - {page}</h3>
+      </li>
       <li
         class="bg-gray-200 rounded-md mt-2"
         style={page === "Home"
