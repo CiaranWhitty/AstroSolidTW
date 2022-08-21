@@ -1,4 +1,7 @@
 ---
+import { Image } from "@astrojs/image/components";
+const imageUrl = "https://placeimg.com/400/225/arch";
+
 import MainLayout from "../../layouts/MainLayout.astro";
 import NavLayout from "../../layouts/NavLayout.astro";
 
@@ -6,17 +9,19 @@ import { ProductData } from "../../data/products";
 const product = ProductData.find((p) => p.url_name === Astro.params.url_name);
 ---
 
-<MainLayout title="Welcome to Astro.">
+<MainLayout title={String(product?.name)} description="Page Description">
   <NavLayout page="Home">
     <div class="w-10/12 m-auto mt-4 mb-4">
       <a href="/products"> <button class="btn btn-wide"> Go Back</button></a>
     </div>
-    <div class="flex justify-evenly mt-4 mb-4">
+    <div class="flex justify-evenly flex-wrap mt-4 mb-4">
       <div class="max-w-md">
-        <img
-          src={"https://placeimg.com/400/225/arch"}
-          alt={product?.name}
+        <Image
           class="w-full"
+          src={imageUrl}
+          alt={product?.name}
+          height={200}
+          aspectRatio="16:9"
         />
       </div>
       <div>
@@ -29,7 +34,10 @@ const product = ProductData.find((p) => p.url_name === Astro.params.url_name);
           {
             product?.categories.map((category) => {
               return (
-                <a href={`/categories/${category.url_name}`} class="p-2">
+                <a
+                  href={`/categories/${category.url_name}`}
+                  class="p-2 hover:underline"
+                >
                   <div class="badge badge-outline bg-gray-300 p-2">
                     {category.name}
                   </div>
