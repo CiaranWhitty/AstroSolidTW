@@ -17,7 +17,7 @@ const product = ProductData.find((p) => p.url_name === Astro.params.url_name);
       <div class="max-w-md">
         <Image
           class="w-full"
-          src={"https://placeimg.com/400/225/arch"}
+          src={String(product?.image.src)}
           alt={product?.name}
           height={200}
           aspectRatio="16:9"
