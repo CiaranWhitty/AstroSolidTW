@@ -14,12 +14,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "types": ["@astrojs/image/client"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js"
-, "tailwind.config.cjs"  ],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "tailwind.config.cjs"],
   "exclude": ["node_modules"]
 }
