@@ -1,0 +1,11 @@
+.sideBySide {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 425px;
+}
+
+.Errors{
+  color: red;
+}

@@ -2,8 +2,8 @@
 import "../styles/globals.css";
 
 export interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props as Props;
@@ -11,17 +11,17 @@ const { title, description } = Astro.props as Props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<!-- <meta name="keywords" content={keywords} /> -->
-		<meta name="description" content={description} />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <meta name="keywords" content={keywords} /> -->
+    <meta name="description" content={description} />
+  </head>
 
-	<main>
-		<slot />
-	</main>
+  <main>
+    <slot />
+  </main>
 </html>

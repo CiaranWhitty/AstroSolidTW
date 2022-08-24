@@ -1,5 +1,13 @@
 ---
 const page = Astro.props.page;
+import {
+  currentUserState,
+  loading,
+  setFormReg,
+  showModalReg,
+} from "../contexts/AuthContext";
+import Auth from "../components/Auth/Index";
+import BtnLogin from "../components/Auth/BtnLogin";
 ---
 
 <div class="drawer">
@@ -67,42 +75,7 @@ const page = Astro.props.page;
                 </div>
               </div>
             </div>
-            <div class="dropdown dropdown-end">
-              <label tabindex="0" class="btn btn-ghost btn-circle">
-                <div class="w-10 rounded-full flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                    ></path>
-                  </svg>
-                  <!-- 
-                    <img
-                    src="https://placeimg.com/80/80/people"
-                    alt="ProfilePicture"
-                  /> 
-                -->
-                </div>
-              </label>
-              <ul
-                tabindex="0"
-                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40"
-              >
-                <li>
-                  <a href="/profile" class="justify-between">
-                    Profile
-                    <!-- <span class="badge">New</span> -->
-                  </a>
-                </li>
-                <li><a href="/settings">Settings</a></li>
-                <li><a href="/">Logout</a></li>
-              </ul>
-            </div>
+            <BtnLogin client:load />
           </div>
         </div>
       </div>
@@ -147,3 +120,4 @@ const page = Astro.props.page;
     </ul>
   </div>
 </div>
+<Auth client:load />

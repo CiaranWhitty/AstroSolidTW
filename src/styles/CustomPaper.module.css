@@ -1,0 +1,46 @@
+.Paper {
+  /* min-height: 100px; */
+  margin: 20px 10px;
+  padding: 20px;
+  border-radius: 5px;
+  /* border: 1px solid #e5e5e5; */
+  background: var(--base-bg);
+  transition: background 350ms ease-in-out 0ms;
+
+  @nest [data-theme="dark"] & {
+    background: var(--base-bg);
+  }
+  & > .Center{
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Paper {
+    padding: 10px;
+  }
+}
+
+.PaperItem {
+  /* min-height: 100px; */
+  margin: 20px 10px;
+  padding: 20px;
+  border-radius: 5px;
+  /* border: 1px solid #e5e5e5; */
+  background: var(--base-bg);
+
+  clip-path: polygon(48px 0%, 100% 0, 100% calc(100% - 48px), calc(100% - 48px) 100%, 0 100%, 0% 48px); 
+  
+  @nest [data-theme="dark"] & {
+    background: var(--base-bg);
+  }
+  & > .Center{
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .PaperItem {
+    padding: 10px;
+  }
+}
