@@ -1,9 +1,11 @@
 ---
+import GetProduct from "../../components/GetProduct";
 import MainLayout from "../../layouts/MainLayout.astro";
 import NavLayout from "../../layouts/NavLayout.astro";
 
-// import { ProductData } from "../../data/products";
-const res = await fetch(`${import.meta.env.PUBLIC_FUNCTION_API_URL}/products`);
+const res = await fetch(
+  `${import.meta.env.PUBLIC_CLOUD_FUNCTION_API_URL}/products`
+);
 const ProductData = await res.json();
 
 const product = ProductData.find(
@@ -13,53 +15,6 @@ const product = ProductData.find(
 
 <MainLayout title={String(product?.name)} description="Page Description">
   <NavLayout page="Products">
-    <div class="w-10/12 m-auto mt-4 mb-4">
-      <a href="/products"> <button class="btn btn-wide"> Go Back</button></a>
-    </div>
-    <div class="flex justify-evenly flex-wrap mt-4 mb-4">
-      <div class="max-w-md">
-        <img
-          class="w-full"
-          src={String(product?.image[0].src)}
-          alt={product?.name}
-          height={200}
-        />
-      </div>
-      <div>
-        <h1 class="font-bold text-5xl mb-2">{product?.name}</h1>
-        <div class="flex justify-evenly">
-          <div class="font-bold mr-4">Price</div>
-          <span>{product?.price}</span>
-        </div>
-        <div class="card-actions justify-end">
-          <a href={`/categories/${product.category}`} class="w-fit">
-            <div class="badge badge-outline bg-gray-300 p-2 hover:underline">
-              {product.category}
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    <GetProduct product={product} />
   </NavLayout>
 </MainLayout>
-
-<!-- 
-  To List Categories
-
-  <div class="flex flex-row justify-center">
-    {
-      product?.categories.map((category) => {
-        return (
-          <a
-            href={`/categories/${category.url_name}`}
-            class="p-2 hover:underline"
-          >
-            <div class="badge badge-outline bg-gray-300 p-2">
-              {category.name}
-            </div>
-          </a>
-        );
-      })
-    }
-  </div>
- -->
